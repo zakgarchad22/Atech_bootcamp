@@ -1,0 +1,14 @@
+h1 {
+  color: red;
+  
+}
+a:hover {
+  background-color: yellow;
+}
+.div_hover {
+  background-color: yellow;
+}
+
+.div_hover:hover {
+  background-color: white;
+}
