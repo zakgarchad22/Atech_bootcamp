@@ -3,11 +3,10 @@ const coffeeShop = {
     money : 100,
   
     drinkRequirements: {
-      latte: {beanRequirement: 10, price: 1.5},
-      americano: {beanRequirement: 5, price: 2.5},
-      doubleShot: {beanRequirement: 15, price: 3.5},
-      frenchPress: {beanRequirement: 12, price: 4.5}
-      
+      latte: 10,
+      americano: 5,
+      doubleShot: 15,
+      frenchPress: 12
     },
 
   
@@ -39,16 +38,11 @@ const coffeeShop = {
 
 
     },
-
-    buyDrink : function(buyDrink)
-    {
-        this.money -= this.drinkRequirements[buyDrink].price
-        console.log(this.money)
-    }
   }
   
-  coffeeShop.buyDrink("latte");
   coffeeShop.makeDrink("latte"); 
-  coffeeShop.buyDrink("latte");
-
+  coffeeShop.makeDrink("americano");
+  coffeeShop.makeDrink("filtered"); //should alert/console "Sorry, we don't make filtered"
+  coffeeShop.makeDrink("doubleShot");
+  coffeeShop.makeDrink("frenchPress"); //should alert/console "Sorry, we're all out of beans"
   
