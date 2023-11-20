@@ -1,0 +1,42 @@
+#container {
+  display: grid;
+  height: 100vh;
+  grid-template-columns: 1fr 3fr;
+
+}
+
+.friends {
+  grid-area: friends;
+  background-color: rgb(231, 59, 231);
+  display: flex;
+  flex-direction: column;
+  gap: 100px; 
+  padding: 10px;
+}
+.friend {
+  background-color: #9b85c2;  
+
+}
+.chat {
+  grid-area: chat;
+  background-color: white; 
+}
+
+.message {
+  grid-area: message;
+  display: flex;
+}
+
+.message input {
+  
+  background-color: white;
+  margin-right: flex;
+  flex-grow: 1;
+  
+}
+
+.message button {
+  background-color: rgb(231, 59, 231);
+  color : white;
+  padding: 20px 80px;
+}

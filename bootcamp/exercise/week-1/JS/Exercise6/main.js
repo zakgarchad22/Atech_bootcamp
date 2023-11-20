@@ -22,7 +22,7 @@ const coffeeShop = {
         else
         {
             this.beans -= this.drinkRequirements[drinkType];
-            return;
+            
         }
         
     }

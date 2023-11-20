@@ -4,8 +4,8 @@ const revealSecret = function () {
   
   const shoutIt = function (person, func) {
     person.revealItAll = func;
-    const result = person.revealItAll();
-    alert(person.name + " said: " ,result);
+    const result = person.revealSecret;
+    alert(person.name + " said: " + result);
   };
   
   const avi = {

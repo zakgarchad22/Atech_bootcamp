@@ -42,7 +42,7 @@ const coffeeShop = {
 
     buyDrink : function(buyDrink)
     {
-        this.money += this.drinkRequirements[buyDrink].price
+        this.money -= this.drinkRequirements[buyDrink].price
         console.log(this.money)
     }
   }
