@@ -10,36 +10,72 @@
 
 .friends {
   grid-area: friends;
-  background-color: rgb(231, 59, 231);
+  background-color: rgba(142,68,173,255);
   display: flex;
   flex-direction: column;
-  gap: 100px; 
+  gap: 160px; 
   padding: 10px;
 }
-.friend {
-  background-color: #9b85c2;  
 
+.friend {
+  border-radius: 5px;
+  padding: 10px 15px;
+  background-color: rgba(155,89,182,255)  
 }
+
 .chat {
   grid-area: chat;
   background-color: white; 
+  padding: 10px; 
 }
 
 .message {
+  border-color: aliceblue;
   grid-area: message;
   display: flex;
 }
 
 .message input {
   
-  background-color: white;
   margin-right: flex;
   flex-grow: 1;
-  
 }
 
 .message button {
-  background-color: rgb(231, 59, 231);
-  color : white;
+  font-size: 0.7em; 
+  background-color: rgba(142,68,173,255);
+  color: white;
   padding: 20px 80px;
+}
+
+
+.message-sent, .message-received {
+  font-family: banger;
+  font-size: 2em; 
+  border-radius: 5px;
+  padding: 10px 15px;
+  margin: 5px;
+  max-width: 80%;
+  clear: both;
+  margin-bottom: 100px;
+}
+
+.message-sent {
+
+  float: left;
+  background-color: rgba(189,195,199,255);
+  margin-right: 10px;
+}
+
+.message-received {
+  float: right;
+  background-color: rgba(46,204,113,255);
+  margin-left: 10px;
+}
+.time {
+  font-family: Courier, monospace;
+  font-size: 0.5em;  
+  margin-left: 12px;
+  color: black;
+  vertical-align: down; 
 }
