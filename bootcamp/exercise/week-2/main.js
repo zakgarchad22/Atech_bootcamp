@@ -1,16 +1,18 @@
-let users = []
+let _memories = ["that time at band camp", "yesterday's breakfast"]
+    
+const Brain = function(){
+    const dayDream = () => this._memories
+    const experience = memory => _memories.push(memory)
+    const forget = memory => _memories.splice(_memories.indexOf(memory), 1)
+    const spazz = () => console.log("bleurg")
 
-const getData = function () {
-    users = [{ name: "Rick" }, { name: "Morty" }]
-    console.log("Got users")
-}
-
-const displayData = function () {
-    console.log("Going to display users")
-    for (user of users) {
-        console.log(user.name)
+    return{
+        reminisce: dayDream,
+        live: experience,
+        blank: forget,
+        freakOut: spazz
     }
 }
 
-getData()
-displayData()
+const brain = Brain()
+brain.reminisce()
