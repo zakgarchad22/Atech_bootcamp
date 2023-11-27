@@ -1,56 +1,166 @@
-
-.head{
-  grid-area: h;
-  background-color: #a29bfe;
+#parent {
+    display: inline-block;
+    background-color: blue;
+    width: 300px;
+    height: 300px;
+  }
   
-}
-
-.side-nav{
-  grid-area: s;
-  background-color: #c6fe9b;
-}
-
-.main{
-  grid-area: m;
-  background-color: #fe9bf4;
-}
-
-.foot{
-  grid-area: f;
-  background-color: #fe9b9b;
-}
-
-
-.container{
-  padding: 10px;
-  position: relative;
-}
-
-
-
-.main{
-  position: absolute;
-  display: inline-block;
-  width: 100%;
-}
-
-.inner-content{
-  position: absolute;
-  top: 70px;
-  height: 430px;
-  width: 90%;
-  background-color:red;
-}
-#container{
-  height: 100vh;
-  display: grid;
-  grid-template-columns: repeat(6, 1fr);
-  grid-template-rows: repeat(5, 1fr);
-  grid-template-areas: 
-  "h h h h h h""s s m m m m ""s s m m m m""s s m m m m""s s f f f f";
-
-}
-
+  .child {
+    background-color: red;
+  }
   
+  #child-1 {
+    position: absolute;
+    width: 300px;
+    height: 20px;
+    top: 50px;
+  }
+  
+  #child-2 {
+    position: absolute;
+    height: 300px;
+    width: 20px;
+    left: 50px;
+  }
+  #background {
+    background-color: mediumpurple;
+    height: 150px;
+    width: 300px;
+    position: relative;
+  }
+  
+  .text {
+    color: black;
+    font-family: sans-serif;
+  }
+  
+  #money {
+    position: absolute;
+    left: 10px;
+    top: 10px;
+  }
+  
+  #time {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+  }
+  
+  .bar {
+    width: 20px;
+    background-color: darkgrey;
+  }
+  
+  #bar-1 {
+    height: 20px;
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+  }
+  
+  #bar-2 {
+    height: 70px;
+    position: absolute;
+    bottom: 10px;
+    left: 50px;
+  }
+  
+  #bar-3 {
+    height: 100px;
+    position: absolute;
+    bottom: 10px;
+    left: 90px;
+  }
+  
+  #bar-4 {
+    height: 85px;
+    position: absolute;
+    bottom: 10px;
+    left: 130px;
+  }
+  
+  #bar-5 {
+    height: 75px;
+    position: absolute;
+    bottom: 10px;
+    left: 170px;
+  }
+  
+  #bar-6 {
+    height: 50px;
+    position: absolute;
+    bottom: 10px;
+    left: 210px;
+  }
 
 
+  #red-background {
+    background-color: red;
+    width: 400px;
+    height:250px;
+    border-radius: 5%;
+    position: relative;
+    bottom: 10px;
+  }
+  
+  .silver-edges {
+    background-color: grey;
+    height: 85px;
+    width: 85px;
+    border-top-left-radius: 7%;
+    border-top-right-radius: 7%;
+    border: 2px solid grey;
+  }
+  
+  #edge-1 {
+    position: absolute;
+    right: 0;
+  }
+  
+  #white-space {
+    width: 230px;
+    height: 190px;
+    background-color: white;
+    position: absolute;
+    top: 0;
+    left: 90px;
+    border-bottom-right-radius: 5%;
+    border-bottom-left-radius: 5%;
+  }
+  #chocolate {
+    background-color: black;
+    display: inline-block;
+    padding: 4px;
+  }
+  #middle {
+    background-color: darkred;
+    height: 5px;
+    width: 385px;
+    margin-top: 6px;
+    margin-bottom: 4px;
+  }
+  .block {
+    background-color: #66320E;
+    width: 90px;
+    height: 90px;
+    margin: 3px;
+  }
+  #block-1 {
+    float: right;
+  }
+  #block-2 {
+    float: right;
+  }
+  #block-3 {
+    float: right;
+  }
+  #block-5 {
+    float: left;
+  }
+  #block-6 {
+    float: left;
+  }
+  #block-7 {
+    float: left;
+  }
+  
