@@ -1,6 +1,3 @@
-
-
-
 function Tweeter() {
   //An array of posts - this should be private. Use the dummy data below to get started
   let posts =[
@@ -107,10 +104,13 @@ function Tweeter() {
   };
 }
 
-
-
-  const tweeter = Tweeter()
-  const renderer = Renderer()
+$("#post").on("click", function() {
+    var name = $("#name").val()
+    var birthday = $("#birthday").val()
+    $("#items").append("<div class='item'>" + name + birthday + "</div>")
+  });
   
-  renderer.renderPosts(tweeter.getPosts())
-  
+  $("#items").on("click", ".item", function() {
+    $(this).remove()
+  });
+
