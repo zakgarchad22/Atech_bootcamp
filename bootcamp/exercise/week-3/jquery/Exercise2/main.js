@@ -6,3 +6,8 @@ $("button").on("click", function() {
 $("#feedme").on("click", ".human", function() {
   $(this).remove()
 });
+
+
+
+
+

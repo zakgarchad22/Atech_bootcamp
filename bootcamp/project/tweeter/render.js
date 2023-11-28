@@ -1,30 +1,35 @@
 function Renderer() {
-
     function renderPosts(posts) {
         $('#posts').empty()
 
-
         for (let post of posts) {
-            let postHtml = '<div class="post" data-id="' + post.id + '">' + post.text + '</div>'
+            let postHtml = '<div class="post" data-id="' 
+            + post.id + '">' 
+            + post.text 
+            + '<button class="delete" data-post-id="' + post.id + '">Delete</button>'
+            + '<br>' 
+            + '<input type="text" placeholder="add comment..." class="comment-input">'
+            + '<button class="submit-comment" data-post-id="' + post.id + '">Add Comment</button>'
+            + '</div>'
             
-            let commentsHtml = '<div class="comments">'
+            let commentsHtml = '';
 
-            for (let comment of post.comments) {
-
-                commentsHtml += '<div class="comment" data-id="' + comment.id + '">' + comment.text + '</div>'
+        for (let comment of post.comments) {
+            commentsHtml += '<div class="comments" data-id="' + comment.id + '">' 
+            + comment.text 
+            + '<button class="delete-comment" data-comment-id="' + comment.id + '" data-post-id="' + post.id + '">X</button>' 
+            + '</div>'
             }
+            
 
-            commentsHtml += '</div>'
-            $('#posts').append(postHtml + commentsHtml)
+        $('#posts').append(postHtml + commentsHtml)
         }
-
-        
     }
 
-
-    return {renderPosts: renderPosts}
-    
-        
     
 
+
+    return {
+        renderPosts: renderPosts
+    };
 }

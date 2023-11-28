@@ -1,7 +1,12 @@
 
 
 
-const capitalize = (cap) => {const step1 = cap.toLowerCase(); const step2 = step1.charAt(0).toUpperCase() + step1.slice(1) ; return console.log(step2) }
+const capitalize = (str) => 
+{
+    const lowerStr = str.toLowerCase();
+    const result = lowerStr.charAt(0).toUpperCase() + lowerStr.slice(1);
+      return result
+}
 
   
 

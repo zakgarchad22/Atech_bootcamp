@@ -113,4 +113,70 @@ function Tweeter() {
   const renderer = Renderer()
   
   renderer.renderPosts(tweeter.getPosts())
+
+
+$('.posts').on('click', 'text', () => {
+    renderer.addPost(text)
+
+});
+
+
+function post() {
+    let text = $('#input').val()
+    tweeter.addPost(text)
+    $('#input').val('')
+    renderer.renderPosts(tweeter.getPosts())
+    
+}
+
+$('.posts').on('click', 'text', () => {
+    renderer.addPost(text)
+
+});
+
+
+function post() {
+    let text = $('#input').val()
+    tweeter.addPost(text)
+    $('#input').val('')
+    renderer.renderPosts(tweeter.getPosts())
+    
+}
+$('#posts').on('click', '.submit-comment', function() 
+{
+    let postId = $(this).data('post-id')
+    let commentText = $(this).prev('.comment-input').val()
+
+    tweeter.addComment(commentText, postId) 
+    renderer.renderPosts(tweeter.getPosts())
+});
+
+
+$('#posts').on('click', '.delete', function() 
+{
+    let postId = $(this).data('post-id')
+   
+    tweeter.removePost(postId) 
+    renderer.renderPosts(tweeter.getPosts())
+});
+
+
+$('#posts').on('click', '.delete-comment', function() {
+    let commentId = $(this).data('comment-id')
+    let postId = $(this).data('post-id')
+    tweeter.removeComment(postId, commentId)
+    renderer.renderPosts(tweeter.getPosts())
+});
+
+
+
+
+
+
+
+
+
+
+
+
   
