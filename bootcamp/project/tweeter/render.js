@@ -1,7 +1,7 @@
 function Renderer() {
     function renderPosts(posts) {
         $('#posts').empty()
-
+       
         for (let post of posts) {
             let postHtml = '<div class="post" data-id="' 
             + post.id + '">' 
@@ -13,7 +13,8 @@ function Renderer() {
             + '</div>'
             
             let commentsHtml = '';
-
+        
+        
         for (let comment of post.comments) {
             commentsHtml += '<div class="comments" data-id="' + comment.id + '">' 
             + comment.text 
@@ -23,6 +24,7 @@ function Renderer() {
             
 
         $('#posts').append(postHtml + commentsHtml)
+        
         }
     }
 

@@ -1,0 +1,84 @@
+
+#container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+        "timer timer timer"
+        "game-container game-container game-container"
+        "countCatch start-button level";
+    width: 1100px;
+    height: 600px;
+    margin: 0 auto;
+    position: relative;
+    background-color: #22a356;
+}
+
+#timer 
+{
+    grid-area: timer;
+    height: 35px;
+    background-color: #28c466;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#game-container 
+{
+    grid-area: game-container;
+    position: relative;
+    height: 300px;
+}
+
+
+#start-button
+{
+    grid-area: start-button;
+    flex: 1; 
+    background-color: #2c8bd5;
+    border-color: rgba(6, 6, 243, 0.761);
+    border-width: 1px;
+}
+#level {
+    grid-area: level;
+    background-color: #28c466;
+    text-align: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  
+}
+#countCatch {
+    grid-area: countCatch;
+    background-color: #28c466;
+    text-align: center; 
+    display: flex;
+    justify-content: center; 
+    align-items: center; 
+  
+}
+
+
+.frog 
+{
+    position: absolute;
+    font-size: 24px;
+    cursor: pointer;
+}
+#start-button:disabled {
+    color: black;
+}
+
+.red {
+    color: red;
+}
+.yellow {
+    color: yellow;
+}
+.black {
+    color: black;
+}
+
+

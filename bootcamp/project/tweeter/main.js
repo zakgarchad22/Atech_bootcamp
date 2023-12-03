@@ -99,11 +99,11 @@ function Tweeter() {
   }
 
   return {
-      getPosts: getPosts,
-      addPost: addPost,
-      removePost: removePost,
-      addComment: addComment,
-      removeComment: removeComment
+      getPosts,
+      addPost,
+      removePost,
+      addComment,
+      removeComment
   };
 }
 
