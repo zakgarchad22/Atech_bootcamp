@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>local storage</title>
+</head>
+
+    <link rel="stylesheet" type="text/css" href="style.css">                
+
+
+     <body>
+
+     <div id ="container">
+   
+        <input id="input"> 
+        <button id="add">click!</button>
+        <button id="clear-wisdoms">Clear Wisdom</button>
+        <div id = "results"></div>
+
+     </div>
+     <script id="wisdom-template" type="text/x-handlebars-template">
+        {{#each wisdoms}}     
+        <p>{{this.wisdom}}<button class="delete-wisdom" data-id="{{index}}">x</button></p> 
+
+        {{/each}}
+    </script>
+
+
+     <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+     <script src="main.js"></script>
+
+      </body>
+     
+
+     
+</html>

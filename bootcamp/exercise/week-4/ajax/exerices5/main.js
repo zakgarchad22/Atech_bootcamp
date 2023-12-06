@@ -1,5 +1,5 @@
 
-  const apiKey = "gtcdGYKJAKi9b8iWAT" 
+  const apiKey = "Q94zsvRa28GBpAJ0ME08DW7sP9RvMgGKuOZkFDAsREtQDy20G90f9MDe" 
 
   function fetchGif() {
     const search = document.getElementById("searchInput").value
