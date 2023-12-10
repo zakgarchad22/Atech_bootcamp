@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>API Project</title>
+    <link rel="stylesheet" type="text/css" media="screen" href="style.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Nunito" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css?family=Indie+Flower" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-3.3.1.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.11/handlebars.js"></script>
+    <script src="main.js"></script>
+</head>
+<body>
+   
+    <div class ="grid-container">   
+    <h1>My People</h1>
+    <br>
+    <br>
+    <div class="grid-item"></div>
+    </div>
+    
+
+  <script id="meanUser-template" type="text/x-handlebars-template">
+    {{#each users}}
+    <div class="grid-item">
+    {{name.first}} {{name.last}}
+    {{email}}
+    </div>
+    {{/each}}
+  </script>
+
+    
+</body>
+</html>

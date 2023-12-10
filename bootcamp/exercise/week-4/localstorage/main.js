@@ -8,7 +8,7 @@ $("button").on("click", function () {
     let newWisdom = $("input").val()
     
     if(newWisdom){
-        wisdoms.push({wisdom: newWisdom })
+        wisdoms.push({ wisdom: newWisdom })
         renderWisdoms()
     }
     
