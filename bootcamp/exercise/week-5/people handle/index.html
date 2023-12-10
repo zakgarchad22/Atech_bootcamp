@@ -13,19 +13,25 @@
     <script src="main.js"></script>
 </head>
 <body>
-   
+  
+
+
+    <div class="grid-header"><h1 id="p">My People</h1></div> 
     <div class ="grid-container">   
-    <h1>My People</h1>
-    <br>
-    <br>
-    <div class="grid-item"></div>
+ 
+        <div class="grid-item"></div>
     </div>
-    
+
+
+  
+
 
   <script id="meanUser-template" type="text/x-handlebars-template">
+   
     {{#each users}}
     <div class="grid-item">
     {{name.first}} {{name.last}}
+    <br>
     {{email}}
     </div>
     {{/each}}

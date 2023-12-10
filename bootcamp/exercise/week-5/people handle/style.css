@@ -1,23 +1,30 @@
 
-body{
-
-    background-color: rgb(0, 0, 0);
+#p{
+  color :#203345;
+  font-size: 70px;
 }
+
+
+
 
 .grid-container {
     display: grid;
-    gap: 50px 100px;
     grid-template-columns: auto auto auto;
-    background-color: #2196F3;
-    padding: 10px;
+    background-color: #ffffff;
+
   }
   
   .grid-item {
-    background-color: rgba(255, 255, 255, 0.8);
-    border: 1px solid rgba(0, 0, 0, 0.8);
+    background-color: #bdc3c7; 
+    border: 10px solid #ffffff;
     padding: 20px;
     font-size: 30px;
     text-align: center;
+    border-radius: 15px;
+  }
+  .grid-header {
+    background-color: rgb(255, 255, 255);
+    padding: 5px;
   }
 
 
