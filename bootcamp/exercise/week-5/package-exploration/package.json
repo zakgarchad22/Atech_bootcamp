@@ -9,10 +9,13 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
+    "@faker-js/faker": "^8.3.1",
+    "faker": "^6.6.6",
     "font-awesome": "^4.7.0",
     "handlebars": "^4.7.8",
     "jquery": "^3.7.1",
     "moment": "^2.29.4",
-    "urllib": "^3.21.0"
+    "urllib": "^3.21.0",
+    "validator": "^13.11.0"
   }
 }
