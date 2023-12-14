@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Furniture Store</title>
+</head>
+<link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+<body>
+    <div>
+        <input type="text" id="product-name" placeholder="Enter product name">
+        <button onclick="fetchProductPrice()">Check Price</button>
+        <br>
+
+        <div class="products">
+            <h2>What do you want to buy?</h2>
+            <ul class="items" id="productList">
+                <li>table</li>
+                <li>chair</li>
+                <li>couch</li>
+                <li>picture frame</li>
+            </ul>
+        </div>
+    </div>
+
+
+
+    <div id="price-result"></div>
+    <div id="buy-result"></div>
+
+    <script>
+        function fetchProductPrice() {
+            let productName = document.getElementById('product-name').value;
+            fetch(`/priceCheck/${productName}`)
+                .then(response => response.json())
+                .then(data => {
+                    if(data.price) {
+                        document.getElementById('price-result').innerText = `Price: $${data.price}`;
+                    } else {
+                        document.getElementById('price-result').innerText = 'Product not found';
+                    }
+                })
+
+        }
+        document.getElementById('productList').addEventListener('click', function(event) {
+
+        let productName = event.target.textContent
+        fetch(`/buy/${productName}`)
+            .then(response => response.json())
+            .then(data => {
+                if (data.message) {
+                    document.getElementById('buy-result').innerText = data.message;
+                } 
+            }) 
+    
+})
+
+    </script>
+
+</body>
+</html>
