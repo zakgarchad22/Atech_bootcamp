@@ -65,14 +65,31 @@ router.delete('/delete/:word', function (req, res)
         delete wordCounter[word]
         res.send({ text:`Deleted ${word}` })
       } 
-      else 
-      {
-        throw new Error(`wordCounter not founded this ${word}`)
-      }
+
     } 
     catch (error) 
     {
       res.status(404).send({ text: error.message })
     }
   })
+
+//extension2
+router.get('/popular', (req, res) => {
+ 
+  let countPopular = 0
+  let wordPopular = ''
+
+  Object.keys(wordCounter).forEach(w => {
+    if (wordCounter[w] > countPopular) 
+    {
+      countPopular = wordCounter[w]
+      wordPopular = w
+    }
+  })
+  if(wordPopular){res.json({ text: `${wordPopular}`, count: `${countPopular}` })}
+  else{ res.status(404).send({ text: error.message })}
+  
+
+  
+})
 module.exports = router
