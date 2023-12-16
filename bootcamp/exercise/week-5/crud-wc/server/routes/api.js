@@ -9,7 +9,7 @@ router.get('/sanity', (req, res) => {
 
 //ex2
 router.get('/word/:word', (req, res) => {
-  const word = req.params.word.toLowerCase()
+  const word = req.params.word.toLowerCase().replace(/\W/g, '')
   if(word in wordCounter) 
   {
     res.send({ count: wordCounter[word] })
@@ -21,7 +21,7 @@ router.get('/word/:word', (req, res) => {
 })
 //ex3
 router.post('/word', (req, res) => {
-  const word = req.body.word.toLowerCase()
+  const word = req.body.word.toLowerCase().replace(/\W/g, '')
   if(word in wordCounter)
   {
     wordCounter[word]++
@@ -57,7 +57,7 @@ router.post('/sentence', (req, res) => {
 //ex5
 router.delete('/delete/:word', function (req, res) 
 {
-    let word = req.params.word.toLowerCase() 
+    let word = req.params.word.toLowerCase().replace(/\W/g, '') 
     try 
     {
       if (word in wordCounter) 
