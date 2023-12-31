@@ -1,0 +1,63 @@
+
+
+
+
+db.linkedon.aggregate([
+  { $group: 
+  {
+    _id: { firstName: "$firstName", salary: "$salary" },
+    uniqueId: { $first: "$_id" } 
+  }},
+  { $sort: { "_id.salary": -1 }},
+  { $limit: 3 },
+  { $project: { _id: 0, firstName: "$_id.firstName", salary: "$_id.salary" }}
+])
+
+db.linkedon.countDocuments({
+    $and: [
+        { "currentCompany.name": "Walmart" },
+        { "salary": { $gt: 6999 } }
+   
+       
+    ]
+})
+
+db.linkedon.aggregate([
+    { 
+        $match: { 
+            "currentCompany.industry": { $in: ["Sales", "Retail"] } 
+        } 
+    },
+    { $sort: { "salary": -1 } },
+    { $limit: 1 },
+    { $project: { "currentCompany.name": 1, "firstName": 1, "lastName": 1, "salary": 1, _id: 0 } }
+])
+
+
+db.linkedon.aggregate([
+    { 
+        $match: 
+        { 
+            "currentCompany.name":  "Apple",
+            "previousCompanies.name":  "Apple"},
+
+         
+    
+    },
+
+    { $sort: { "salary": -1 } },
+    { $limit: 1 },
+    { $project: { "currentCompany.name": 1, "firstName": 1, "lastName": 1, "salary": 1, _id: 0 } }
+
+])
+
+
+db.linkedon.countDocuments({
+    $or: [
+        { "currentCompany.name": "Apple" },
+        { "previousCompanies.name": "Apple" }
+   
+       
+    ]
+})
+

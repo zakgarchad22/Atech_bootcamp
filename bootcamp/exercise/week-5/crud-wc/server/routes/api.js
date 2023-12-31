@@ -21,17 +21,15 @@ router.get('/word/:word', (req, res) => {
 })
 //ex3
 router.post('/word', (req, res) => {
-  const word = req.body.word.toLowerCase().replace(/\W/g, '')
-  if(word in wordCounter)
-  {
-    wordCounter[word]++
-  } 
-  else 
-  {
-    wordCounter[word] = 1
+  const word = req.body.word.toLowerCase().replace(/\W/g, '');
+  if (word in wordCounter) {
+    wordCounter[word]++;
+  } else {
+    wordCounter[word] = 1;
   }
-  res.send({ text: `Added ${word}`, currentCount: wordCounter[word] })
-})
+  console.log(wordCounter); // Add this line to log the wordCounter
+  res.send({ text: `Added ${word}`, currentCount: wordCounter[word] });
+});
 
 //ex4
 router.post('/sentence', (req, res) => {
@@ -73,6 +71,25 @@ router.delete('/delete/:word', function (req, res)
     }
   })
 
+//extension2
+router.get('/popular', (req, res) => {
+ 
+  let countPopular = 0
+  let wordPopular = ''
+
+  Object.keys(wordCounter).forEach(w => {
+    if (wordCounter[w] > countPopular) 
+    {
+      countPopular = wordCounter[w]
+      wordPopular = w
+    }
+  })
+  if(wordPopular){res.json({ text: `${wordPopular}`, count: `${countPopular}` })}
+  else{ res.status(404).send({ text: error.message })}
+  
+
+  
+})
 //extension2
 router.get('/popular', (req, res) => {
  
