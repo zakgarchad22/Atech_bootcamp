@@ -24,7 +24,7 @@ router.post('/person' , function(req,res) {
 
 router.put('/person/:id', async function(req, res) {
   
-        const personId = req.params.id;
+        const personId = req.params.id
         const updatedPerson = await Person.findByIdAndUpdate(personId, { age: 80 }, { new: true })
         res.send(updatedPerson)
     
@@ -35,6 +35,17 @@ router.delete('/apocalypse', function(req, res) {
 
         
       })
+
+
+    //Assume you have a Person Schema with a name property
+            
+const removePerson = (name) => {
+    let p = Person.findOneAndDelete({
+   name: name
+   })
+   return p
+}
+
     
 
 
